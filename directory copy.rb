@@ -9,7 +9,7 @@ def input_students
   students = []
   name = gets.chomp
   while !name.empty? do
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: :november, country: :England}
     puts "Now we have #{students.count} students"
     name = gets.chomp
   end
@@ -17,12 +17,8 @@ def input_students
 end
 
 def print(students)
-  students.each.with_index(1) do |student, index|
-    if "#{student[:name]}".capitalize.length < 12
-      puts "#{index} #{student[:name]} (#{student[:cohort]} cohort)"
-      else
-      nil
-    end
+      students.each do |student|
+      puts "#{student[:name]} (#{student[:cohort]} cohort) in #{student[:country]}"
   end
 end
 def print_footer(names)
