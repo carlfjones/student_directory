@@ -9,6 +9,9 @@ def input_students
   puts "Please enter the names of the cohort"
   puts "To finish, just hit return twice"
   nameC = gets.chomp
+  if nameC.empty? == true
+     return nameC = "november"
+   end
   students = []
   while !name.empty? do
     students << {name: name, cohort: nameC, country: :England}
@@ -16,7 +19,10 @@ def input_students
     puts "Please enter the names of the students"
     name = gets.chomp
     puts "Please enter the names of the cohort"
-    nameC = gets.chomp
+    nameC = gets.chomp.to_s
+    if nameC.empty? == true
+        nameC = "november"
+     end
   end
   students
 end
