@@ -18,7 +18,7 @@ end
 
 def print(students)
   students.each.with_index(1) do |student, index|
-    if "#{student[:name]}".capitalize.split("")[0] == "A"
+    if "#{student[:name]}".capitalize.length < 12
       puts "#{index} #{student[:name]} (#{student[:cohort]} cohort)"
       else
       nil
