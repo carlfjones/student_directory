@@ -1,4 +1,3 @@
-
 def print_header
   puts "The students of Villains Academy"
   puts "-------------"
@@ -19,7 +18,11 @@ end
 
 def print(students)
   students.each.with_index(1) do |student, index|
-    puts "#{index} #{student[:name]} (#{student[:cohort]} cohort)"
+    if "#{student[:name]}".capitalize.split("")[0] == "A"
+      puts "#{index} #{student[:name]} (#{student[:cohort]} cohort)"
+      else
+      nil
+    end
   end
 end
 def print_footer(names)
