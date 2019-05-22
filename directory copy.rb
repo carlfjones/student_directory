@@ -15,8 +15,12 @@ def input_students
   students = []
   while !name.empty? do
     students << {name: name, cohort: nameC, country: :England}
-    puts "Now we have #{students.count} students"
-    puts "Please enter the names of the students"
+    if "#{students.count}".to_i > 1
+      puts "Now we have #{students.count} students"
+    else
+      puts "Now we have #{students.count} student"
+    end
+      puts "Please enter the names of the students"
     name = gets.chomp
     puts "Please enter the names of the cohort"
     nameC = gets.chomp.to_s
@@ -33,7 +37,11 @@ def print(students)
   end
 end
 def print_footer(names)
-  puts "Overall we have #{names.count} great students"
+  if "#{names.count}".to_i > 1
+    puts "Overall we have #{names.count} great students"
+    else
+    puts "Overall we have #{names.count} great student"
+  end
 end
 
 
